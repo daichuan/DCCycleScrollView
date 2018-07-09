@@ -145,6 +145,12 @@ static NSString *const cellID = @"cellID";
     }else{
         _dragDirection = 0;
     }
+    self.collectionView.userInteractionEnabled = NO;
+//
+    NSInteger currentIndex = (_oldPoint + (self.itemWidth + self.itemSpace) * 0.5) / (self.itemSpace + self.itemWidth);
+
+    [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:currentIndex + _dragDirection inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
+
 }
 
 - (void)scrollViewWillBeginDecelerating: (UIScrollView *)scrollView{
@@ -152,8 +158,8 @@ static NSString *const cellID = @"cellID";
     NSInteger currentIndex = (_oldPoint + (self.itemWidth + self.itemSpace) * 0.5) / (self.itemSpace + self.itemWidth);
     
     [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:currentIndex + _dragDirection inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
-
 }
+
 - (float)nextPointCurrentPoint:(int)shouldPage{
     return (shouldPage+1)/2*self.itemWidth+self.itemSpace;
 }
@@ -319,7 +325,6 @@ static NSString *const cellID = @"cellID";
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
         _collectionView.scrollsToTop = NO;
-//        _collectionView.pagingEnabled = YES;
         _collectionView.showsVerticalScrollIndicator = NO;
         _collectionView.showsHorizontalScrollIndicator = NO;
         _collectionView.backgroundColor = [UIColor clearColor];
