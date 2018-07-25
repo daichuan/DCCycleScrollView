@@ -27,7 +27,7 @@
     DCCycleScrollView *banner = [DCCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 100, self.view.frame.size.width, 135) shouldInfiniteLoop:YES imageGroups:imageArr];
 //    banner.placeholderImage = [UIImage imageNamed:@"placeholderImage"];
 //    banner.cellPlaceholderImage = [UIImage imageNamed:@"placeholderImage"];
-    banner.autoScrollTimeInterval = 5;
+    banner.autoScrollTimeInterval = 3;
     banner.autoScroll = YES;
     banner.isZoom = YES;
     banner.itemSpace = 0;
