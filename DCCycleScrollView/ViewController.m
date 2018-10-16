@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "DCCycleScrollView.h"
+#import "DCPushVC.h"
 @interface ViewController ()<DCCycleScrollViewDelegate>
 
 @end
@@ -27,7 +28,7 @@
     DCCycleScrollView *banner = [DCCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 100, self.view.frame.size.width, 135) shouldInfiniteLoop:YES imageGroups:imageArr];
 //    banner.placeholderImage = [UIImage imageNamed:@"placeholderImage"];
 //    banner.cellPlaceholderImage = [UIImage imageNamed:@"placeholderImage"];
-    banner.autoScrollTimeInterval = 3;
+    banner.autoScrollTimeInterval = 1;
     banner.autoScroll = YES;
     banner.isZoom = YES;
     banner.itemSpace = 0;
@@ -39,7 +40,9 @@
 //点击图片的代理
 -(void)cycleScrollView:(DCCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index
 {
-    NSLog(@"index = %ld",(long)index);
+    DCPushVC *vc = [[DCPushVC alloc]init];
+    vc.title = [NSString stringWithFormat:@"第%ld张图片",index];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

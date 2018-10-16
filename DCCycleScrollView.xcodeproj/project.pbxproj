@@ -16,6 +16,7 @@
 		EF20BE9920452D8C00F153AC /* DCCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF20BE9820452D8C00F153AC /* DCCycleScrollView.m */; };
 		EF20BEB320453D1300F153AC /* DCCycleScrollViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EF20BEB220453D1300F153AC /* DCCycleScrollViewCell.m */; };
 		EF58309C2046CA0000571E5D /* DCCycleScrollViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = EF58309B2046CA0000571E5D /* DCCycleScrollViewFlowLayout.m */; };
+		EF611C4321097E89002BF612 /* DCPushVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EF611C4221097E89002BF612 /* DCPushVC.m */; };
 		EFA28FBF204CF34600C36533 /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA28F94204CF34600C36533 /* SDWebImageManager.m */; };
 		EFA28FC0204CF34600C36533 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA28F96204CF34600C36533 /* UIImageView+HighlightedWebCache.m */; };
 		EFA28FC1204CF34600C36533 /* SDWebImageFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA28F97204CF34600C36533 /* SDWebImageFrame.m */; };
@@ -58,6 +59,8 @@
 		EF20BEB220453D1300F153AC /* DCCycleScrollViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCCycleScrollViewCell.m; sourceTree = "<group>"; };
 		EF58309A2046CA0000571E5D /* DCCycleScrollViewFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCCycleScrollViewFlowLayout.h; sourceTree = "<group>"; };
 		EF58309B2046CA0000571E5D /* DCCycleScrollViewFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCCycleScrollViewFlowLayout.m; sourceTree = "<group>"; };
+		EF611C4121097E89002BF612 /* DCPushVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCPushVC.h; sourceTree = "<group>"; };
+		EF611C4221097E89002BF612 /* DCPushVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCPushVC.m; sourceTree = "<group>"; };
 		EFA28F90204CF34600C36533 /* SDWebImageCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageCoder.h; sourceTree = "<group>"; };
 		EFA28F91204CF34600C36533 /* NSImage+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+WebCache.h"; sourceTree = "<group>"; };
 		EFA28F92204CF34600C36533 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
@@ -142,6 +145,8 @@
 				EF20BE8220452D7700F153AC /* AppDelegate.m */,
 				EF20BE8420452D7700F153AC /* ViewController.h */,
 				EF20BE8520452D7700F153AC /* ViewController.m */,
+				EF611C4121097E89002BF612 /* DCPushVC.h */,
+				EF611C4221097E89002BF612 /* DCPushVC.m */,
 				EF20BE9720452D8C00F153AC /* DCCycleScrollView.h */,
 				EF20BE9820452D8C00F153AC /* DCCycleScrollView.m */,
 				EF58309A2046CA0000571E5D /* DCCycleScrollViewFlowLayout.h */,
@@ -297,6 +302,7 @@
 				EFA28FCF204CF34600C36533 /* NSImage+WebCache.m in Sources */,
 				EFA28FC2204CF34600C36533 /* UIImage+ForceDecode.m in Sources */,
 				EFA28FC9204CF34600C36533 /* SDWebImagePrefetcher.m in Sources */,
+				EF611C4321097E89002BF612 /* DCPushVC.m in Sources */,
 				EFA28FD2204CF34600C36533 /* UIView+WebCacheOperation.m in Sources */,
 				EFA28FC7204CF34600C36533 /* SDWebImageCoderHelper.m in Sources */,
 				EFA28FC1204CF34600C36533 /* SDWebImageFrame.m in Sources */,

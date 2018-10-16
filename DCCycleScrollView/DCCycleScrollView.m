@@ -45,7 +45,6 @@ static NSString *const cellID = @"cellID";
         [self initialization];
         [self addSubview:self.collectionView];
         [self addSubview:self.pageControl];
-
     }
     return self;
 }
@@ -149,19 +148,18 @@ static NSString *const cellID = @"cellID";
         _dragDirection = 0;
     }
     self.collectionView.userInteractionEnabled = NO;
-//
     NSInteger currentIndex = (_oldPoint + (self.itemWidth + self.itemSpace) * 0.5) / (self.itemSpace + self.itemWidth);
 
     [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:currentIndex + _dragDirection inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
 
 }
 
+//开始减速的时候
 - (void)scrollViewWillBeginDecelerating: (UIScrollView *)scrollView{
     if(!self.infiniteLoop) return;//如果不是无限轮播，则返回
-
     //松开手指滑动开始减速的时候，设置滑动动画
     NSInteger currentIndex = (_oldPoint + (self.itemWidth + self.itemSpace) * 0.5) / (self.itemSpace + self.itemWidth);
-    
+
     [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:currentIndex + _dragDirection inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
 }
 
@@ -207,6 +205,7 @@ static NSString *const cellID = @"cellID";
     _timer = timer;
     
 }
+//销毁定时器
 - (void)invalidateTimer
 {
     [_timer invalidate];
@@ -294,7 +293,7 @@ static NSString *const cellID = @"cellID";
     self.pageControl.numberOfPages = imgArr.count;
     //如果循环则100倍，
     _totalItems = self.infiniteLoop?imgArr.count * 100:imgArr.count;
-    if(_imgArr.count > 1)
+    if(_imgArr.count > 0)
     {
         self.collectionView.scrollEnabled = YES;
         [self setAutoScroll:self.autoScroll];
@@ -316,6 +315,7 @@ static NSString *const cellID = @"cellID";
         //创建之前，停止定时器
         [self invalidateTimer];
         
+        //如果只有一个图片，不需要开启定时器滑动（内部自动检测）
         if (_autoScroll) {
             [self setupTimer];
         }
