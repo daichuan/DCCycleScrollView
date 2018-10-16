@@ -91,7 +91,6 @@ static NSString *const cellID = @"cellID";
         [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:targeIndex inSection:0] atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
         _oldPoint = self.collectionView.contentOffset.x;
         self.collectionView.userInteractionEnabled = YES;
-
     }
 }
 #pragma mark  - event
@@ -103,7 +102,13 @@ static NSString *const cellID = @"cellID";
 {
     self.collectionView.userInteractionEnabled = NO;
     if (!self.imgArr.count) return; // 解决清除timer时偶尔会出现的问题
-    self.pageControl.currentPage = [self currentIndex] % self.imgArr.count;
+    NSInteger currentPage = [self currentIndex] % self.imgArr.count;
+    self.pageControl.currentPage = currentPage;
+    
+    if([self.delegate respondsToSelector:@selector(cycleScrollView:currentPageIndex:)])
+    {
+        [self.delegate cycleScrollView:self currentPageIndex:currentPage];
+    }
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
@@ -315,10 +320,12 @@ static NSString *const cellID = @"cellID";
         //创建之前，停止定时器
         [self invalidateTimer];
         
-        //如果只有一个图片，不需要开启定时器滑动（内部自动检测）
         if (_autoScroll) {
             [self setupTimer];
         }
+    }else
+    {
+        _autoScroll = NO;
     }
 
 }

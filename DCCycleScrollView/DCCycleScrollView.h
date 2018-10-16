@@ -12,13 +12,17 @@
 @protocol DCCycleScrollViewDelegate <NSObject>
 /** 点击图片回调 */
 - (void)cycleScrollView:(DCCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index;
+
+@optional
+/**当图片手动滑动或自动切换时回调，返回当前页码，用于外部自定义pageControl时，切换当前页使用*/
+- (void)cycleScrollView:(DCCycleScrollView *)cycleScrollView currentPageIndex:(NSInteger)index;
 @end
 
 
 @interface DCCycleScrollView : UIView
-/**是否无线循环，默认yes  如果设置成NO，则需要自己设置collectionView的pagingEnabled属性*/
+/**是否无限循环，默认yes  如果设置成NO，则需要自己设置collectionView的pagingEnabled属性*/
 @property (nonatomic,assign) BOOL infiniteLoop;
-//*是否自动滑动，默认yes
+//*是否自动滑动，默认yes,如果infiniteLoop = NO，则autoScroll=NO；不能设置成YES；
 @property (nonatomic,assign) BOOL autoScroll;
 /**是否缩放，默认不缩放*/
 @property (nonatomic,assign) BOOL isZoom;
