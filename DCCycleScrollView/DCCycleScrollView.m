@@ -196,7 +196,7 @@ static NSString *const cellID = @"cellID";
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([self.delegate respondsToSelector:@selector(cycleScrollView:didSelectItemAtIndex:)]) {
-        [self.delegate cycleScrollView:self didSelectItemAtIndex:[self currentIndex] % self.imgArr.count];
+        [self.delegate cycleScrollView:self didSelectItemAtIndex:indexPath.row % self.imgArr.count];
     }
 }
 #pragma mark  - notification
